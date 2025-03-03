@@ -1,0 +1,41 @@
+
+.numbers{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+}
+
+.numbers button{
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+}
+
+.container {
+    display: flex;
+}
+.operators {
+    display: flex;
+    flex-direction: column;
+}
+.operators button{
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    /* flex-direction: column; */
+}
+
+.display {
+    width: 600px;
+    height: 100px;
+    background-color: dimgrey;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
