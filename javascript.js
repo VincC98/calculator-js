@@ -1,5 +1,5 @@
-let numberA = -1;
-let numberB = -1;
+let numberA = "";
+let numberB = "";
 let operator = -1;
 
 
@@ -18,17 +18,26 @@ function divide (a, b){
 }
 function operate (numberA, numberB, operator){
         if (operator == "+"){
+            console.log(numberA);
             return add(numberA, numberB)
         }
         else if (operator == "-"){
             return substract(numberA, numberB)
         }
         else if (operator == "*"){
+            console.log(numberA)
+            console.log(numberB)
+            console.log(operator)
             return multiply(numberA, numberB)
         }
         else {
             return divide(numberA, numberB) 
         }
+}
+function resetVariable(){
+    numberA = "";
+    numberB = "";
+    operator = -1;
 }
 
 const display = document.querySelector(".display");
@@ -41,26 +50,27 @@ digitButtons.forEach(element => {
     element.addEventListener("click", (event) => {
         if (element.textContent == "c"){
             display.textContent = "";
+            resetVariable()
         }
         else if (element.textContent == "="){
-            let result = operate(numberA, numberB, operator);
+            let result = operate(parseInt(numberA), parseInt(numberB), operator);
             display.textContent = result;
-            numberA = -1;
-            numberB = -1;
+            resetVariable()
         }
         else {
             console.log(event);
-            display.textContent += " " + element.textContent;//update the display ui
+            display.textContent += element.textContent;//update the display ui
 
             if (element.textContent == "+" || element.textContent == "-"
                  || element.textContent == "/" || element.textContent == "*" ){
                 operator = element.textContent;
             }
-            if (numberA != -1){
-                numberB = parseInt(element.textContent);
+            else if (operator != -1){
+                numberB += element.textContent;
+                console.log(numberB)
             }
             else{
-                numberA = parseInt(element.textContent);
+                numberA += element.textContent;
             }
         }
         
