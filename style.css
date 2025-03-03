@@ -1,4 +1,11 @@
-
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+}
 .numbers{
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +34,7 @@
 }
 
 .display {
-    width: 600px;
+    width: 664px;
     height: 100px;
     background-color: dimgrey;
     margin-bottom: 8px;
